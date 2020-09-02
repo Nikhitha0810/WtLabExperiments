@@ -21,24 +21,60 @@ body{
   }
 
 </style>
+<script>
+function evalid(){
+	var email = document.getElementById("mail").value;
+	
+	if(email == ""){
+		alert("Please enter your email");
+	}
+	
+}
+function pvalid(){
+	 var password = document.getElementById("pwd").value;
+	 if(password == ""){
+		 alert("Please enter the Passowrd");
+	 }
+	 if(password.length < 6){
+		 alert("Password should contain more than 5 characters");
+	 }
+}
+function cvalid(){
+	var password = document.getElementById("pwd").value;
+	var conpassword = document.getElementById("conpwd").value;
+	if(conpassword == ""){
+		 alert("Please confirm the Password");
+	 }
+	if(password.localeCompare(conpassword) == 1){
+		alert("enter correct password");
+	}
+}
+function avalid(){
+	var address = document.getElementById("address").value;
+	if(address == ""){
+		alert("enter your address");
+	}
+}
+
+</script>
 </head>
 <body >
 <div class="container" style="background-color:#ffffcc;width:500px; height:560px">
 <br>
   <h2 style="text-align:center">SIGN UP</h2>
-  <form action="/action_page.php">
+  <form action="/action_page.php" name = "register">
   <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="username" placeholder="Enter Email" name="email">
+      <input type="email" class="form-control" id="mail" placeholder="Enter Email" name="mail" onblur="evalid()">
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter Password" name="pswd">
+      <input type="password" class="form-control" id="pwd" placeholder="Enter Password" name="pswd" onblur="pvalid()">
     </div>
     
     <div class="form-group">
       <label for="pwd">Confirm Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter Password" name="pswd">
+      <input type="password" class="form-control" id="conpwd" placeholder="Enter Password" name="conpswd" onblur="cvalid()">
     </div>
     <div class="form-group form-check">
       <label class="form-check-label">
@@ -47,10 +83,8 @@ body{
       </label>
     </div>
      <div class="form-group">
-     <label for="add">Address:</label>
-      <textarea name="message" rows="5" cols="30">
-
-     </textarea>
+     <label for="address">Address:</label>
+     <textarea  name="message" rows="5" cols="30" id= "address" onblur="avalid()"></textarea>
     </div>
      
   

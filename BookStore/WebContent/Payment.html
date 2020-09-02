@@ -21,6 +21,36 @@ body{
   }
 
 </style>
+<script>
+function lvalid(){
+	var loginid = document.getElementById("loginid").value;
+	
+	if(loginid == ""){
+		alert("Please enter your LoginId");
+	}
+	
+}
+function pvalid(){
+	 var password = document.getElementById("pwd").value;
+	 if(password == ""){
+		 alert("Please enter the Passowrd");
+	 }
+}
+function avalid(){
+	 var amount = document.getElementById("amt").value;
+	 if(amount == ""){
+		 alert("Please enter the amount");
+	 }
+	 
+}
+function ccvalid(){
+	 var creditcardno = document.getElementById("ccn").value;
+	 if(creditcardno == ""){
+		 alert("Please enter your creditcard number");
+	 }
+	 
+}
+</script>
 </head>
 <body >
 <div class="container" style="background-color:#ffffcc;width:500px; height:530px">
@@ -29,19 +59,19 @@ body{
   <form action="/action_page.php">
       <div class="form-group">
       <label for="text">LoginId:</label>
-      <input type="text" class="form-control" id="loginid" placeholder="Enter LoginId" name="login">
+      <input type="text" class="form-control" id="loginid" placeholder="Enter LoginId" name="login" onblur="lvalid()">
     </div>
     <div class="form-group">
       <label for="pwd"> Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter Password" name="pswd">
+      <input type="password" class="form-control" id="pwd" placeholder="Enter Password" name="pswd" onblur="pvalid()">
     </div>
       <div class="form-group">
       <label for="amt"> Amount:</label>
-      <input type="number" class="form-control" id="amt" placeholder="Enter Amount" name="amt">
+      <input type="number" class="form-control" id="amt" placeholder="Enter Amount" name="amt" onblur="avalid()">
     </div>
       <div class="form-group">
       <label for="ccn"> CreditCardNO:</label>
-      <input type="number" class="form-control" id="ccn" placeholder="Enter Card Number" name="amt">
+      <input type="number" class="form-control" id="ccn" placeholder="Enter Card Number" name="amt" onblur="ccvalid()">
     </div>
    
   </form>

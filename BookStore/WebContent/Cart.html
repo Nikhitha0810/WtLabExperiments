@@ -21,6 +21,24 @@ body{
   }
 
 </style>
+<script>
+function qvalid(){
+	var quantity = document.getElementById("qt").value;
+	
+	if(quantity == ""){
+		alert("Please enter the quantity");
+	}
+	
+}
+function tvalid(){
+	var tb = document.getElementById("tb").value;
+	
+	if(tb == ""){
+		alert("Please select a textbook");
+	}
+	
+}
+</script>
 </head>
 <body >
 <div class="container" style="background-color:#ffffcc;width:500px; height:370px">
@@ -29,7 +47,7 @@ body{
   <form action="/action_page.php">
     <div class="form-group">
       <label for="tb">Text Books:</label><br>
-     <select id="tb" name="tb">
+     <select id="tb" name="tb" onblur="tvalid()">
      <option value="">select a textbook</option>
   <option value="C++">C++</option>
   <option value="PPS(C)">PPS(C)</option>
@@ -45,7 +63,7 @@ body{
     </div>
     <div class="form-group">
       <label for="qt">Quantity:</label>
-      <input type="number" class="form-control" id="qt" placeholder="Enter Quantity" name="qt">
+      <input type="number" class="form-control" id="qt" placeholder="Enter Quantity" name="qt" onblur="qvalid()">
     </div>
     <div class="form-group">
         <label for="cost">Cost of each Book: 100</label><br>     
